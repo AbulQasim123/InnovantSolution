@@ -44,28 +44,4 @@ class Cart extends Component
 
         return view('livewire.cart', ['carts' => $carts]);
     }
-
-    public function delete($id)
-    {
-        try {
-            $cart = CartModel::find($id);
-            if ($cart) {
-                $cart->delete();
-                $this->dispatch(
-                    'data-deleted',
-                    title: 'Success',
-                    message: 'Product Deleted successfully.',
-                    redirectUrl: route('cart.list')
-                );
-            } else {
-                session()->flash('error', 'Cart item not found.');
-            }
-        } catch (\Throwable $th) {
-            $this->dispatch(
-                'data-error',
-                title: 'Error',
-                message: $th->getMessage()
-            );
-        }
-    }
 }

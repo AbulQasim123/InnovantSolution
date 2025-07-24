@@ -7,7 +7,7 @@
             <a class="{{ config('ui.button.normal') }}" href="{{ route('add.product') }}" wire:navigate>+ Add</a>
         </div>
 
-        <x-filter-search />
+        <x-filter-search placeholder="Search Product Name" />
 
         <div class="table-responsive text-nowrap">
             <table class="table table-hover mb-0">
@@ -36,7 +36,7 @@
                                 <span class="text-muted">No image</span>
                                 @endforelse
                             </td>
-                            <td>{{ $product->description }}</td>
+                            <td>{{ Str::limit($product->description, 25) }}</td>
                             <td>
                                 <span class="badge bg-label-{{ $product->status ? 'success' : 'danger' }}">
                                     {{ $product->status ? 'Active' : 'Inactive' }}

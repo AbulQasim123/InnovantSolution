@@ -6,7 +6,7 @@
             </h5>
         </div>
 
-        <x-filter-search />
+        <x-filter-search placeholder="Search Product Name"/>
 
         <div class="table-responsive text-nowrap">
             <table class="table table-hover">
@@ -18,7 +18,6 @@
                         <th>Price</th>
                         <th>Total</th>
                         <th>Images</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -37,16 +36,9 @@
                                     <span class="text-muted">No image</span>
                                 @endforelse
                             </td>
-                            <td>
-                                <button title="Click to delete" wire:click="$emit('deleteMake', {{ $cart->id }})"
-                                    onclick="confirm('Are you sure you want to delete this item?') || event.stopImmediatePropagation()"
-                                    class="btn btn-sm btn-icon text-danger">
-                                    <i class="bx bx-trash me-1"></i>
-                                </button>
-                            </td>
                         </tr>
                     @empty
-                        <td colspan="7" class="text-center text-muted fw-semibold">
+                        <td colspan="6" class="text-center text-muted fw-semibold">
                             <i class="bx bx-info-circle me-1"></i> No Cart item found
                         </td>
                     @endforelse
