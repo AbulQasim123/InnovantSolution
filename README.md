@@ -30,6 +30,9 @@ A full-stack Laravel-based admin panel (SPA with Livewire v3) and RESTful API fo
 ---
 
 ## Admin Panel
+### http://127.0.0.1:8000/admin
+### username = admin@gmail.com
+### password = admin
 
 - Integrated login/logout system.
 - Dashboard, Profile, Product Management, Cart View.
