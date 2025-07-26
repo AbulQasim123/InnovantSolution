@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use Exception;
 use App\Models\Cart;
-use Illuminate\Http\Request;
 use Razorpay\Api\Api;
+use App\Models\Product;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CartResource;
-use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreAddToCartRequest;
 
 class CartController extends Controller
 {
@@ -40,29 +41,16 @@ class CartController extends Controller
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => false,
-                'message' => $th->getMessage()
+                'message' => 'An unexpected error occurred while fetching products.',
+                'error' => $th->getMessage(),
             ]);
         }
     }
 
     // add to cart
-    public function addToCart(Request $request)
+    public function addToCart(StoreAddToCartRequest $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                'product_id'   => 'required|exists:products,id',
-                'quantity'     => 'required|integer|min:1',
-                'customer_id'  => 'required|integer'
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'status'  => false,
-                    'message' => 'Validation failed.',
-                    'errors'  => $validator->errors()
-                ], 422);
-            }
-
             if ($request->customer_id != 1) {
                 return response()->json([
                     'status'  => false,
@@ -256,7 +244,7 @@ class CartController extends Controller
         }
     }
 
-
+    // checkout
     public function checkout(Request $request)
     {
         // Payment integration logic goes here (e.g., Stripe, Razorpay, PhonePe)
@@ -264,18 +252,14 @@ class CartController extends Controller
         // Currently, I can't test any payment gateway because my PAN card is not linked with Aadhaar
 
         try {
-            // Validate request
             $request->validate([
                 'amount' => 'required|numeric|min:1',
             ]);
-
-            // Razorpay credentials (use from .env file)
             $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
 
-            // Create Razorpay Order
             $order = $api->order->create([
                 'receipt'         => 'order_rcpt_' . uniqid(),
-                'amount'          => $request->amount * 100, // Amount in paise
+                'amount'          => $request->amount * 100,
                 'currency'        => 'INR',
                 'payment_capture' => 1, // auto capture
             ]);

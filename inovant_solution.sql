@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2025 at 10:45 PM
+-- Generation Time: Jul 26, 2025 at 10:41 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -151,7 +151,13 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Alex', 'alex@gmail.com', '8596857485', 'Mumbai', '$2y$12$aORdlgWbwaMObPFyI73TheVcx2q6mo6x1froM9j715Zl69Fn2v8kS', '2025-07-24 18:34:18', '2025-07-24 18:34:18');
+(1, 'Alex', 'alex@gmail.com', '8596857485', 'Mumbai', '$2y$12$aORdlgWbwaMObPFyI73TheVcx2q6mo6x1froM9j715Zl69Fn2v8kS', '2025-07-24 18:34:18', '2025-07-24 18:34:18'),
+(2, 'ABC', 'xyz@gmail.com', '8585968574', 'Bhiwandi', '$2y$12$7PV7j4YcUSN6lIfSh3lYauJSIhlrJBeizMST8FVks8Kb0wtFSb.i6', '2025-07-26 03:00:51', '2025-07-26 03:00:51'),
+(3, 'Example1', 'example1@gmail.com', '8574859652', 'Airoli', '$2y$12$oQJ8YNlFcsbasJYTS02V9.Ci9mHaPhgqH2Zby/jzJYRPxLe0bMgEe', '2025-07-26 03:02:38', '2025-07-26 03:02:38'),
+(4, 'Example2', 'example2@gmail.com', '8574859641', 'Rabale', '$2y$12$A.FkrzySPKnoPiA6aPCdCeO2NvtqjmyTMb7BsoDYV.B20JM1vhv2G', '2025-07-26 03:02:53', '2025-07-26 03:02:53'),
+(5, 'Example3', 'example3@gmail.com', '8574459641', 'Ghansoli', '$2y$12$dsch9inqKKKx/VWgyXAK9uCi/R76yP0d2ykFXrsoj8cehQA4uvvzq', '2025-07-26 03:03:11', '2025-07-26 03:03:11'),
+(6, 'Example4', 'example4@gmail.com', '8574459685', 'Sanpada', '$2y$12$oKfj4Qcl/l4mqmw0lsJag..r8lGfyd5ied0.7KBMaX1DPs7gOdayq', '2025-07-26 03:03:29', '2025-07-26 03:03:29'),
+(7, 'Example5', 'example5@gmail.com', '8552459685', 'Vashi', '$2y$12$9qnGQkUPO64FI.8RS7F.g.o36itfMMQG9XyvK.H0Rjje7LBwAFzyu', '2025-07-26 03:03:51', '2025-07-26 03:03:51');
 
 -- --------------------------------------------------------
 
@@ -308,7 +314,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('tWI0SqKDyHindy8Z6x6cTEncN0evHWid5dVkOP62', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZlNFUlp4R3hvUU5YSnpkYm9BSENnSUQ1MGNtSUtXaVUycGdNbWIzeiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9lZGl0LXByb2R1Y3QvNiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1753389479);
+('0clkoJc6O7sXCa81Rkp0OEEzPd2weIoomaEP8huq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaWtWQW9sTTdKOUhXUE11SFI4TjBvNjdaRXR2TG1VakpSZ29NWldReiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zZXJ2aWNlLXdvcmtlci5qcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1753514888),
+('ZSUaP8Ov5qGfUd8U5OMgxSeWjlZmDBoCNTAx8IAT', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSm9EU0l6blZkZUVGWHllYm1FWDV4Tm96VmRFaVFSZDU4bmp3TWVuTCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNjoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FkbWluL3Byb2R1Y3RzIjt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9wcm9kdWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1753519280);
 
 -- --------------------------------------------------------
 
@@ -440,7 +447,7 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

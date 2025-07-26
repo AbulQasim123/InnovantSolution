@@ -77,10 +77,10 @@
 
                         <button type="submit" class="{{ config('ui.button.primary') }}" wire:loading.attr="disabled"
                             wire:target="updateProduct">
-                            <span wire:loading.remove wire:target="updateProduct">Update</span>
+                            <span wire:loading.remove wire:target="updateProduct">Save Changes</span>
                             <span wire:loading wire:target="updateProduct">
                                 <span class="spinner-border spinner-border-sm" role="status"></span>
-                                Updating...
+                                Saving...
                             </span>
                         </button>
                         <a href="{{ route('products.list') }}" class="{{ config('ui.button.secondary') }}"

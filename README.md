@@ -32,7 +32,7 @@ A full-stack Laravel-based admin panel (SPA with Livewire v3) and RESTful API fo
 ## Admin Panel
 
 - Integrated login/logout system.
-- Dashboard, Profile, Product Management, Cart View.
+- Dashboard, Profile, Customers, Product Management, Cart View.
 - Well-designed UI with Bootstrap 5.
 - SPA navigation using Livewire v3.
 
@@ -44,6 +44,8 @@ A full-stack Laravel-based admin panel (SPA with Livewire v3) and RESTful API fo
 
 | Method       | Endpoint                 | Description                                   |
 | ------------ | ------------------------ | --------------------------------------------- |
+| `POST`       | `/add-customer`          | Add Customer.                                 |
+| `GET`        | `/get-customer`          | Get All Customers.                            |
 | `GET`        | `/get-product`           | Get All Product.                              |
 | `POST`       | `/add-to-cart`           | Add to cart.                                  |
 | `GET`        | `/get-cart`              | Cart items listing                            |
@@ -70,7 +72,8 @@ Postman Collection included in the repo.
 2. Run `composer install`
 3. Run `cp .env.example .env && php artisan key:generate`
 4. Setup DB in `.env` and import `database.sql` (provided).
-5. Start server: `php artisan serve`
+5. Storage link: `php artisan storage:link`
+6. Start server: `php artisan serve`
 
 ---
 

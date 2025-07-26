@@ -64,10 +64,10 @@
 
                         <button type="submit" class="{{ config('ui.button.primary') }}" wire:loading.attr="disabled"
                             wire:target="storeProduct">
-                            <span wire:loading.remove wire:target="storeProduct">Submit</span>
+                            <span wire:loading.remove wire:target="storeProduct">Save</span>
                             <span wire:loading wire:target="storeProduct">
                                 <span class="spinner-border spinner-border-sm" role="status"></span>
-                                Submitting...
+                                Saving...
                             </span>
                         </button>
                         <a href="{{ route('products.list') }}" class="{{ config('ui.button.secondary') }}"

@@ -1,7 +1,7 @@
 @props([
     'placeholder' => 'Search...',
 ])
-<div class="px-3">
+<div class="">
     <div wire:loading.delay.2000ms wire:loading.class="d-flex" wire:loading.class.remove="d-none"
         wire:target="perPage,search" class="overlay-spinner d-none justify-content-center align-items-center">
         <div class="spinner-border text-primary" role="status">

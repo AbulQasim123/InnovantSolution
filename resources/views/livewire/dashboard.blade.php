@@ -1,48 +1,36 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row g-4">
-        <!-- Agents -->
+        <!-- Customers Total -->
         <div class="col-md-4">
-            <a href="javascript:void()" wire:navigate class="text-decoration-none text-dark">
+            <a href="{{ route('customer.list') }}" wire:navigate class="text-decoration-none text-dark">
                 <div class="card text-center shadow-sm hover-card">
                     <div class="card-body">
-                        <h6 class="card-title text-bold">Agents</h6>
-                        {{-- <h3 class="fw-bold">{{ $total_agent }}</h3> --}}
+                        <h6 class="card-title text-bold">Customers</h6>
+                        <h3 class="fw-bold">{{ $total_customers }}</h3>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Owner Clients -->
+        <!-- Products Total -->
         <div class="col-md-4">
-            <a href="javascript:void()" wire:navigate class="text-decoration-none text-dark">
+            <a href="{{ route('products.list') }}" wire:navigate class="text-decoration-none text-dark">
                 <div class="card text-center shadow-sm hover-card">
                     <div class="card-body">
-                        <h6 class="card-title text-bold">Owners</h6>
-                        {{-- <h3 class="fw-bold">{{ $total_owner_clients }}</h3> --}}
+                        <h6 class="card-title text-bold">Products</h6>
+                        <h3 class="fw-bold">{{ $total_product }}</h3>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Tenant Clients -->
+        <!-- Carts Total -->
         <div class="col-md-4">
-            <a href="javascript:void()" wire:navigate class="text-decoration-none text-dark">
+            <a href="{{ route('cart.list') }}" wire:navigate class="text-decoration-none text-dark">
                 <div class="card text-center shadow-sm hover-card">
                     <div class="card-body">
-                        <h6 class="card-title text-bold">Tenants</h6>
-                        {{-- <h3 class="fw-bold">{{ $total_tenant_clients }}</h3> --}}
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Associates -->
-        <div class="col-md-4">
-            <a href="javascript:void()" wire:navigate class="text-decoration-none text-dark">
-                <div class="card text-center shadow-sm hover-card">
-                    <div class="card-body">
-                        <h6 class="card-title text-bold">Associates</h6>
-                        {{-- <h3 class="fw-bold">{{ $total_associate }}</h3> --}}
+                        <h6 class="card-title text-bold">Carts</h6>
+                        <h3 class="fw-bold">{{ $total_cart }}</h3>
                     </div>
                 </div>
             </a>

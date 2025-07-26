@@ -6,7 +6,8 @@ use App\Livewire\{
     Dashboard,
     Product,
     EditProduct,
-    Profile
+    Profile,
+    Customer
 };
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => ['web', 'auth', 'is_admin']]
     Route::get('dashboad', Dashboard::class)->name('dashboard');
     Route::get('profile', Profile::class)->name('profile');
 
+    Route::get('customers', Customer::class)->name('customer.list');
     Route::get('products', Product::class)->name('products.list');
     Route::get('add-product', AddProduct::class)->name('add.product');
     Route::get('edit-product/{id}', EditProduct::class)->name('edit.product');

@@ -14,6 +14,13 @@ class Customer extends Model
         'password',
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+    protected $attributes = [
+        'password' => 'hashed',
+    ];
+
     public function carts()
     {
         return $this->hasMany(Cart::class);

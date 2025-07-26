@@ -10,12 +10,16 @@ return [
         'icon' => 'bx bx-notepad',
         'sub_menu' => [
             [
-                'title' => 'Products',
-                'route' => 'products.list',
+                'title' => 'Customer',
+                'route' => 'customer.list',
             ],
             [
                 'title' => 'Add Product',
                 'route' => 'add.product',
+            ],
+            [
+                'title' => 'Products',
+                'route' => 'products.list',
             ],
             [
                 'title' => 'Carts',
