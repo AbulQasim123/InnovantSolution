@@ -105,15 +105,15 @@ A full-stack Laravel-based admin panel (SPA with Livewire v3) and RESTful API fo
 | `GET`        | `/profile`               | Profile                                       |
 | `GET`        | `/update-profile`        | Update Profile                                |
 | `GET`        | `/logout`                | Logout                                        |
-| `GET`        | `/delete-account`        | Delete Account                                |
+| `DELETE`     | `/delete-account`        | Delete Account                                |
 | `GET`        | `/get-product`           | Get All Product.                              |
 | `POST`       | `/add-to-cart`           | Add to cart.                                  |
 | `GET`        | `/get-cart`              | Cart items listing                            |
 | `POST`       | `/update-cart`           | Update cart items.                            |
 | `DELETE`     | `/delete-cart`           | Delete cart items.                            |
-| `DELETE`     | `/checkout`              | Checkout                                      |
-| `DELETE`     | `/pay-now`               | Pay Now                                       |
-| `DELETE`     | `/verify-payment`        | Verify Payment                                |
+| `POST`       | `/checkout`              | Checkout                                      |
+| `POST`       | `/pay-now`               | Pay Now                                       |
+| `POST`       | `/verify-payment`        | Verify Payment                                |
 
 Postman Collection included in the repo with documentation.
 
