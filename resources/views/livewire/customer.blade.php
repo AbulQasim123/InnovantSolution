@@ -14,10 +14,9 @@
                             <th class="text-start">Sr. No.</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
+                            <th>Mobile No</th>
                             <th>Address</th>
                             <th>Created At</th>
-                            <th>Others</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -26,15 +25,14 @@
                                 <td class="text-start">{{ $customers->firstItem() + $index }}.</td>
                                 <td>{{ $customer->name }}</td>
                                 <td>{{ $customer->email }}</td>
-                                <td>{{ $customer->phone }}</td>
+                                <td>{{ $customer->mobile }}</td>
                                 <td>{{ $customer->address }}</td>
                                 {{-- <td>{{ Carbon\Carbon::parse($customer->created_at)->diffForHumans() }}</td> --}}
                                 <td>{{ Carbon\Carbon::parse($customer->created_at)->format('M d, Y') }}</td>
-                                <td>(Others)</td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center text-muted fw-semibold">
+                                <td colspan="6" class="text-center text-muted fw-semibold">
                                     <i class="bx bx-info-circle me-1"></i> No Customer found
                                 </td>
                             </tr>

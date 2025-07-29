@@ -18,6 +18,7 @@ class ProductRepository
                 'name'        => $data['product_name'],
                 'slug'        => Str::slug($data['product_name']),
                 'price'       => $data['price'],
+                'quantity'    => $data['quantity'],
                 'description' => $data['description'],
                 'status'      => $data['status'],
             ]);
@@ -44,6 +45,7 @@ class ProductRepository
             'name'        => $data['name'],
             'slug'        => Str::slug($data['name']),
             'price'       => $data['price'],
+            'quantity'    => $data['quantity'],
             'description' => $data['description'],
             'status'      => $data['status'],
         ]);

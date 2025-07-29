@@ -19,6 +19,7 @@ class EditProduct extends Component
     public $product_name;
     public $description;
     public $price;
+    public $quantity;
     public $status;
     public $images = [];
     public $existingImages = [];
@@ -32,6 +33,7 @@ class EditProduct extends Component
         $this->product_name = $product->name;
         $this->description = $product->description;
         $this->price = $product->price;
+        $this->quantity = $product->quantity;
         $this->status = $product->status;
         $this->existingImages = $product->images->pluck('images')->toArray();
     }
@@ -67,6 +69,7 @@ class EditProduct extends Component
         $productService->updateProduct($this->product_id, [
             'product_name' => $this->product_name,
             'price'        => $this->price,
+            'quantity'     => $this->quantity,
             'description'  => $this->description,
             'images'       => $uploadedImagePaths,
             'status'       => $this->status

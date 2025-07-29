@@ -20,6 +20,7 @@ class AddProduct extends Component
     use WithFileUploads;
     public string $product_name = '';
     public string $price = '';
+    public string $quantity = '';
     public string $description = '';
     public array $images = [];
     public string $status = '';
@@ -54,6 +55,7 @@ class AddProduct extends Component
         $productService->createProduct([
             'product_name' => $this->product_name,
             'price'        => $this->price,
+            'quantity'     => $this->quantity,
             'description'  => $this->description,
             'images'       => $uploadedImagePaths,
             'status'       => $this->status,

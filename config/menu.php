@@ -25,6 +25,10 @@ return [
                 'title' => 'Carts',
                 'route' => 'cart.list',
             ],
+            [
+                'title' => 'Ordes',
+                'route' => 'order.list',
+            ],
         ],
     ],
 ];

@@ -42,7 +42,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6" class="text-center text-muted fw-semibold">
+                                <td colspan="8" class="text-center text-muted fw-semibold">
                                     <i class="bx bx-info-circle me-1"></i> No Cart item found
                                 </td>
                             </tr>

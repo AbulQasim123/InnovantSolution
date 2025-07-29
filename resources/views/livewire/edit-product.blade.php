@@ -27,6 +27,28 @@
                             </div>
 
                             <div class="col-md-4 mb-3">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-control @error('quantity') is-invalid @enderror"
+                                    wire:model.live="quantity" placeholder="Enter Quantity">
+                                @error('quantity')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Upload New Images</label>
+                                <input type="file" multiple
+                                    class="form-control @error('images') is-invalid @enderror" wire:model="images"
+                                    accept="image/*">
+                                @error('images')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-4 mb-3">
                                 <label class="form-label fw-medium" for="status">Status</label>
                                 <select id="status" class="form-select @error('status') is-invalid @enderror"
                                     wire:model.live="status">
@@ -39,20 +61,8 @@
                                 @enderror
                             </div>
 
-                        </div>
-                        <div class="row">
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Upload New Images</label>
-                                <input type="file" multiple
-                                    class="form-control @error('images') is-invalid @enderror" wire:model="images"
-                                    accept="image/*">
-                                @error('images')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-md-6">
+                            <div class="col-md-4 b-3">
                                 <label class="form-label">Description</label>
                                 <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
                                     placeholder="Enter Description" wire:model.live="description"></textarea>
@@ -62,17 +72,17 @@
                             </div>
 
                             {{-- Existing Images --}}
-                                <div class="col-md-12">
-                                    <label class="form-label">Existing Images</label>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        @foreach ($existingImages as $image)
-                                            <div style="width: 70px; height: 70px;">
-                                                <img src="{{ $image }}" class="img-thumbnail img-fluid rounded"
-                                                    style="object-fit: cover; width: 100%; height: 100%;">
-                                            </div>
-                                        @endforeach
-                                    </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Existing Images</label>
+                                <div class="d-flex flex-wrap gap-2">
+                                    @foreach ($existingImages as $image)
+                                        <div style="width: 70px; height: 70px;">
+                                            <img src="{{ $image }}" class="img-thumbnail img-fluid rounded"
+                                                style="object-fit: cover; width: 100%; height: 100%;">
+                                        </div>
+                                    @endforeach
                                 </div>
+                            </div>
                         </div>
 
                         <button type="submit" class="{{ config('ui.button.primary') }}" wire:loading.attr="disabled"

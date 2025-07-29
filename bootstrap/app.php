@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Middleware\JwtMiddleware;
 use Illuminate\Foundation\Application;
-use App\Http\Middleware\EnsureClientRole;
 use App\Http\Middleware\AdminAuthentication;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Middleware\HandleSanctumUnauthenticated;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,8 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'is_admin' => AdminAuthentication::class,
-            'is_api' => JwtMiddleware::class,
-            'client.role' => EnsureClientRole::class,
+            'sanctum' => HandleSanctumUnauthenticated::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

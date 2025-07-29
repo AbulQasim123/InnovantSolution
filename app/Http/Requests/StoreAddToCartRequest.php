@@ -14,8 +14,6 @@ class StoreAddToCartRequest extends FormRequest
     {
         return [
             'product_id'   => 'required|integer|exists:products,id',
-            'quantity'     => 'required|integer|min:1',
-            'customer_id'  => 'required|integer'
         ];
     }
 
@@ -27,9 +25,7 @@ class StoreAddToCartRequest extends FormRequest
             'product_id.exists'     => 'Product not found.',
             'quantity.required'     => 'Quantity is required.',
             'quantity.integer'      => 'Quantity must be an integer.',
-            'quantity.min'          => 'Quantity must be at least 1.',
-            'customer_id.required'  => 'Customer ID is required.',
-            'customer_id.integer'   => 'Customer ID must be an integer.',
+            'quantity.min'          => 'Quantity must be at least 1.'
         ];
     }
 }

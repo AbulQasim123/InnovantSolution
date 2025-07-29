@@ -31,6 +31,7 @@ class ProductService
             $this->productRepository->update($product, [
                 'name'        => $data['product_name'],
                 'price'       => $data['price'],
+                'quantity'    => $data['quantity'],
                 'description' => $data['description'],
                 'status'      => $data['status'],
             ]);

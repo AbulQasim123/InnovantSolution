@@ -10,7 +10,6 @@ use Livewire\Attributes\{Layout, Title};
 #[Layout('admin.layouts.app')]
 #[Title('Product List')]
 
-
 class Customer extends Component
 {
     use WithPagination;
@@ -39,7 +38,7 @@ class Customer extends Component
             $query->where(function ($q) {
                 $q->where('name', 'like', "%{$this->search}%")
                     ->orWhere('email', 'like', "%{$this->search}%")
-                    ->orWhere('phone', 'like', "%{$this->search}%");
+                    ->orWhere('mobile', 'like', "%{$this->search}%");
             });
         })
             ->latest()

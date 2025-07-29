@@ -10,12 +10,12 @@ class CartResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'          => $this->id,
-            'customer_id' => $this->customer_id,
-            'product_id'  => $this->product_id,
+            'cartId'          => $this->id,
+            'customerId' => $this->customer_id,
+            'productId'  => $this->product_id,
             'quantity'    => $this->quantity,
             'product'     => [
-                'id'          => $this->product->id,
+                'productId'   => $this->product->id,
                 'name'        => $this->product->name,
                 'slug'        => $this->product->slug,
                 'price'       => $this->product->price,
@@ -23,8 +23,8 @@ class CartResource extends JsonResource
                 'status'      => $this->product->status,
                 'images'      => $this->product->images->map(function ($image) {
                     return [
-                        'id'         => $image->id,
-                        'product_id' => $image->product_id,
+                        'imageId'         => $image->id,
+                        'productId' => $image->product_id,
                         'images'     => $image->images,
                     ];
                 }),

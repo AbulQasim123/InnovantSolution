@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Agent;
-use App\Models\Client;
-use App\Models\Associate;
+use App\Livewire\Customer;
 
 return [
 
@@ -16,6 +14,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'customers_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'customers',
+        ],
     ],
 
 
@@ -24,6 +26,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => Customer::class,
         ],
     ],
 

@@ -15,7 +15,8 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'product_name' => 'required|string|min:3|max:255',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'description' => 'required|string',
             'images' => 'nullable|array',
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:5120',
@@ -31,6 +32,10 @@ class UpdateProductRequest extends FormRequest
             'product_name.max' => 'Product name must not exceed 255 characters.',
             'price.required' => 'Price is required.',
             'price.numeric' => 'Price must be a number.',
+            'price.min' => 'Price cannot be negative.',
+            'quantity.required' => 'Quantity is required.',
+            'quantity.numeric' => 'Quantity must be a number.',
+            'quantity.min' => 'Quantity cannot be negative.',
             'description.required' => 'Description is required.',
             'images.*.image' => 'Each file must be an image.',
             'images.*.mimes' => 'Each image must be of type: jpeg, png, jpg, webp.',

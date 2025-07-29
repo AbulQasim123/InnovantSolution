@@ -69,7 +69,7 @@ class Profile extends Component
             'data-added',
             title: 'Success',
             message: 'Profile Updated successfully.',
-            redirectUrl: route('profile')
+            redirectUrl: route('dashboard')
         );
     }
 

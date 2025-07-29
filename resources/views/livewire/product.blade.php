@@ -16,12 +16,12 @@
                             <th class="text-start">Sr. No.</th>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>Stock</th>
                             <th>Images</th>
                             <th>Description</th>
                             <th>Status</th>
                             <th>Created At</th>
                             <th>Actions</th>
-                            <th>Others</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -30,6 +30,7 @@
                                 <td class="text-start">{{ $products->firstItem() + $index }}.</td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ number_format($product->price, 2) }}</td>
+                                <td>{{ $product->quantity ?? 0 }}</td>
                                 <td class="d-flex flex-wrap gap-1">
                                     @forelse($product->images as $img)
                                         <img src="{{ $img->images }}" alt="Product Image" width="30" height="30"
@@ -49,11 +50,10 @@
                                     <x-action-dropdown :edit-route="'edit.product'" :edit-id="$product->id" delete-method="delete"
                                         confirm-message="Are you sure you want to delete this Product?" />
                                 </td>
-                                <td>(Others)</td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" class="text-center text-muted fw-semibold">
+                                <td colspan="9" class="text-center text-muted fw-semibold">
                                     <i class="bx bx-info-circle me-1"></i> No Product found
                                 </td>
                             </tr>

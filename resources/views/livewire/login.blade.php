@@ -50,7 +50,6 @@
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
 
                                 <span class="text-danger" id="password_error"></span>
@@ -99,7 +98,7 @@
                     beforeSend: function() {
                         $('#submitLogin').attr('disabled', true);
                         $('#submitLogin').html(
-                            '<i class="fa fa-spinner fa-spin"></i> Processing...');
+                            '<i class="fa fa-spinner fa-spin"></i> Checking credentials...');
                     },
                     success: function(response) {
                         if (response.status === true) {

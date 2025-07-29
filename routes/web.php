@@ -7,7 +7,8 @@ use App\Livewire\{
     Product,
     EditProduct,
     Profile,
-    Customer
+    Customer,
+    Order
 };
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
@@ -38,8 +39,8 @@ Route::group(['prefix' => 'admin/', 'middleware' => ['web', 'auth', 'is_admin']]
     Route::get('products', Product::class)->name('products.list');
     Route::get('add-product', AddProduct::class)->name('add.product');
     Route::get('edit-product/{id}', EditProduct::class)->name('edit.product');
-
     Route::get('cart', Cart::class)->name('cart.list');
+    Route::get('orders', Order::class)->name('order.list');
 });
 
 Route::fallback(function () {
